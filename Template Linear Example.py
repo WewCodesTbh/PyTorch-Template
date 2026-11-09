@@ -18,9 +18,9 @@ test_loader = torch.utils.data.DataLoader(dataset=test_dataset, batch_size=batch
     
 n_iter = 1200
 
-layers = [28*28, 100, 100, 10]
+layers = [28*28, 10, 10, 10]
 t = time()
-model = MyTorchTemplate.trainLinear(train_dataset, test_dataset, layers, nn.LeakyReLU(), batch_size, n_iter)
+model, _ = MyTorchTemplate.trainLinear(train_dataset, test_dataset, layers, nn.LeakyReLU(), batch_size, n_iter)
 print("training took {0}s".format(round(time()-t, 4)))
 
 print("training complete. Draw some shapes! Left click to place a pixel, right click to erase, c to clear and x to evaluate")
